@@ -1,0 +1,17 @@
+
+How to import GPG keys of a software to verify signature?
+  $ gpg --fetch-keys https://keepassxc.org/keepassxc_master_signing_key.asc
+    gpg: requesting key from 'https://keepassxc.org/keepassxc_master_signing_key.asc'
+    gpg: key CFB4C2166397D0D2: public key "KeePassXC Release <release@keepassxc.org>" imported
+    gpg: Total number processed: 1
+    gpg:               imported: 1
+
+Import manually from a file:
+  gpg --import ./keepassxc_master_signing_key.asc
+
+Verify a release:
+  gpg --verify KeePassXC-$VERSION-x86_64.AppImage.sig
+
+
+How to create a revocation certificate?
+  gpg --gen-revoke KEY-ID
