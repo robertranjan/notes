@@ -16,6 +16,7 @@ how to save copied text[buffer] to a file?
 
 
 How to start multiple ssh sessions with tmux?
+  Knowledge source: https://gist.github.com/dmytro/3984680
   Pre-requisite:
     sqlite3 installed with a db: ~/Personal/password-databases/sqlite/test.db
       Tables: hosts
