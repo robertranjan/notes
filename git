@@ -24,4 +24,6 @@ Git diff between branches:
           Code: 
             A -> Added; D -> Deleted; M -> Modified; R/R100 -> Renamed(?)
   
-    
+find a deleted file in the project commit history:
+  git log --oneline --pretty=format:%aN:%H --diff-filter=D --summary | grep delete
+    You may use other flags to --diff-filter
