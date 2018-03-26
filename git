@@ -28,7 +28,7 @@
     git log --oneline --pretty=format:%aN:%H --diff-filter=D --summary | grep delete
       You may use other flags to --diff-filter
 
-4. Copying/Moving files/folders across repositories: 
+4. Copying/Moving files/folders between repositories with HISTORY:
     Introduction:
       This document describes overall steps to copy or move contents from one repository to another.
       Say, a directory path/to/folder/abc & a file path/to/file/xyz.text are to be copied from repository_A to repository_B
