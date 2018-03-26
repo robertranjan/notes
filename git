@@ -1,58 +1,57 @@
-Git log:
-  Syntax:
-    git log --oneline commitHash1..commitHash2
-    Example:
-      1. git log --oneline master..HEAD
-        Explanation:
-          This shows all commit logs from branch: master to current branch's HEAD
-      2. git log --oneline shortlog commitHash1..commitHash2
-        Explanation:
-          This shows all commit's short logs from branch: master to current branch's HEAD
-    Source: https://stackoverflow.com/questions/822811/showing-which-files-have-changed-between-two-revisions
+1. Git log:
+    Syntax:
+      git log --oneline commitHash1..commitHash2
+      Example:
+        1. git log --oneline master..HEAD
+          Explanation:
+            This shows all commit logs from branch: master to current branch's HEAD
+        2. git log --oneline shortlog commitHash1..commitHash2
+          Explanation:
+            This shows all commit's short logs from branch: master to current branch's HEAD
+      Source: https://stackoverflow.com/questions/822811/showing-which-files-have-changed-between-two-revisions
 
-Git diff between branches:
-  Syntax:
-    git diff branch1..branch2
-    example:
-      1.  git diff master..HEAD
-        Explanation:
-          Displays diff between master and current branch
-        Source: https://stackoverflow.com/questions/822811/showing-which-files-have-changed-between-two-revisions
-      2. git diff --name-status branch1..branch2
-        Explanation:
-          Displays files names that differs between branchs along with change code.
-          Code: 
-            A -> Added; D -> Deleted; M -> Modified; R/R100 -> Renamed(?)
+2. Git diff between branches:
+    Syntax:
+      git diff branch1..branch2
+      example:
+        1.  git diff master..HEAD
+          Explanation:
+            Displays diff between master and current branch
+          Source: https://stackoverflow.com/questions/822811/showing-which-files-have-changed-between-two-revisions
+        2. git diff --name-status branch1..branch2
+          Explanation:
+            Displays files names that differs between branchs along with change code.
+            Code: 
+              A -> Added; D -> Deleted; M -> Modified; R/R100 -> Renamed(?)
   
-find a deleted file in the project commit history:
-  git log --oneline --pretty=format:%aN:%H --diff-filter=D --summary | grep delete
-    You may use other flags to --diff-filter
+3. find a deleted file in the project commit history:
+    git log --oneline --pretty=format:%aN:%H --diff-filter=D --summary | grep delete
+      You may use other flags to --diff-filter
 
+4. Copying/Moving files/folders across repositories: 
+    Introduction:
+      This document describes overall steps to copy or move contents from one repository to another.
+      Say, a directory path/to/folder/abc & a file path/to/file/xyz.text are to be copied from repository_A to repository_B
 
-Copying/Moving files/folders across repositories: 
-  Introduction:
-    This document describes overall steps to copy or move contents from one repository to another.
-    Say, a directory path/to/folder/abc & a file path/to/file/xyz.text are to be copied from repository_A to repository_B
-
-  Things to be done in repository_A:
-      1. Clone the repo locally and navigate to the cloned directory.
-      2. Create a new branch locally, say the branch name is: for_cloning:
-          git checkout -b for_cloning
-      3. Remove all contents from the local directory except path/to/folder/abc and path/to/file/xyz.text. Please remember to delete hidden files (. DS_Store, .gitignore etc), but please keep the original .git folder intact.
-      4. Commit and push the changes on the new branch to remote.
-          git push
-      In case you are pushing to the branch for the first time the command run would be:
-          git push --set-upstream origin for_cloning
-  Things to be done in repository_B:
-      1. Clone the repo locally and navigate to the cloned directory. 2. Create a new branch: cloning_from_a_seprate_repo.
-          git checkout -b cloning_from_a_seprate_repo
-      3. Add a new remote pointing to repository_A. Say name of the new remote is source_repo:
-          git remote add source_repo ssh://git@<git url>/<project>/<repository_A>.git
-      4. Pull the branch: for_cloning at repository_A to the newly created local branch on repository_B via the remote: source_repo.
-          git pull source_repo for_cloning --allow-unrelated-histories
-      5. Push the local changes back to original remote (origin) pointing to repository_B.
-          git push --set-upstream origin cloning_from_a_seprate_repo
-      6. Create a PR from cloning_from_a_seprate_repo to develop at repository_B and merge.
-          Notes:
-              For moving instead of copied, there would be an additional step just to remove applicable content from repository_A.
-              In case the movement needs source changes (e.g. classpath changes inside java sources), it's recommended to be done after the movement is complete. It should essentially be just one or more commits.
+    Things to be done in repository_A:
+        1. Clone the repo locally and navigate to the cloned directory.
+        2. Create a new branch locally, say the branch name is: for_cloning:
+            git checkout -b for_cloning
+        3. Remove all contents from the local directory except path/to/folder/abc and path/to/file/xyz.text. Please remember to delete hidden files (. DS_Store, .gitignore etc), but please keep the original .git folder intact.
+        4. Commit and push the changes on the new branch to remote.
+            git push
+        In case you are pushing to the branch for the first time the command run would be:
+            git push --set-upstream origin for_cloning
+    Things to be done in repository_B:
+        1. Clone the repo locally and navigate to the cloned directory. 2. Create a new branch: cloning_from_a_seprate_repo.
+            git checkout -b cloning_from_a_seprate_repo
+        3. Add a new remote pointing to repository_A. Say name of the new remote is source_repo:
+            git remote add source_repo ssh://git@<git url>/<project>/<repository_A>.git
+        4. Pull the branch: for_cloning at repository_A to the newly created local branch on repository_B via the remote: source_repo.
+            git pull source_repo for_cloning --allow-unrelated-histories
+        5. Push the local changes back to original remote (origin) pointing to repository_B.
+            git push --set-upstream origin cloning_from_a_seprate_repo
+        6. Create a PR from cloning_from_a_seprate_repo to develop at repository_B and merge.
+            Notes:
+                For moving instead of copied, there would be an additional step just to remove applicable content from repository_A.
+                In case the movement needs source changes (e.g. classpath changes inside java sources), it's recommended to be done after the movement is complete. It should essentially be just one or more commits.
