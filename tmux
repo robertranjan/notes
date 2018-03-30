@@ -94,6 +94,7 @@
           tmux attach-session ${hosts[0]}
         }
    3.1 Solution: 2
+        Add below function to .bashrc/.profile, source .bashrc/.profile and try [ starttmux ] atr cli.
         starttmux() {
           alias=$1
           echo "Received alias: #$alias#"
