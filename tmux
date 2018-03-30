@@ -15,6 +15,7 @@
 2. tmux logging.
     prefix + P        ; toggles pane logging. Output is cleared from unwanted ANSI characters!
     prefix + Alt + P  ; saves complete pane history to a file
+    Read more here - https://github.com/tmux-plugins/tmux-logging
 
 3. How to start multiple ssh sessions with tmux?
       Knowledge source: https://gist.github.com/dmytro/3984680
