@@ -1,0 +1,6 @@
+How to create maven project?
+  mvn archetype:generate
+  
+How to comile the code?
+  mvn compile ; compile the code
+  
