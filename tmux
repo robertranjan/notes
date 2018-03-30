@@ -18,6 +18,7 @@
     Read more here - https://github.com/tmux-plugins/tmux-logging
 
 3. How to start multiple ssh sessions with tmux?
+   3.1 Solution: 1
       Knowledge source: https://gist.github.com/dmytro/3984680
       Pre-requisite:
         sqlite3 installed with a db: ~/Personal/password-databases/sqlite/test.db
@@ -77,6 +78,41 @@
           local hosts=( $HOSTS )
           #session_name="${hosts[0]}"
           #printf "host list:%s\n" "${hosts[@]}"
+          tmux ls
+          tmux_server_status=$?
+          if [[ $tmux_server_status != 0 ]] ; then
+            tmux new-session -d
+          fi
+          tmux new-window "ssh ${hosts[0]}"
+          unset hosts[0];
+          for i in "${hosts[@]}"; do
+              tmux split-window -h  "ssh $i"
+              tmux select-layout tiled > /dev/null
+          done
+          tmux select-pane -t 0
+          tmux set-window-option synchronize-panes on > /dev/null
+          tmux attach-session ${hosts[0]}
+        }
+   3.1 Solution: 2
+        starttmux() {
+          alias=$1
+          echo "Received alias: #$alias#"
+          syntax="\e[31msyntax: starttmux <alias name>\n\tEx: \tstarttmux drep.dev \n\t\tstarttmux red.prod\n\tTry starttmux <tab><tab>\n\e[0m"
+          if [ -z "$1" ] ; then
+            printf  "$syntax"
+            return 1
+          fi
+          # using ansible to get the hostlist. you may need to give inventory path with -i option in the command.
+          HOSTS="$(ansible $alias --list-hosts | grep -v '  hosts' | xargs )"
+          export HOSTS=$HOSTS
+          if [ -z "$HOSTS" ]; then
+            printf "\e[31mHOSTS=[$HOSTS]\n\t$syntax"
+            return
+          else
+            echo "Creating tmux session to hosts: $HOSTS"
+          fi
+
+          local hosts=( $HOSTS )
           tmux ls
           tmux_server_status=$?
           if [[ $tmux_server_status != 0 ]] ; then
