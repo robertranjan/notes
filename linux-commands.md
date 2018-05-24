@@ -1,5 +1,6 @@
+# Linux commands 
 
-# WHICH command:
+## WHICH command:
   `which` looks through current `path` and show the first entry.
 
   Try `which -a <binary_name>` to list out all entries.
@@ -9,7 +10,9 @@
   Article:
     1. https://www.lifewire.com/linux-which-command-4062680
 
-# BASH command search sequence
+## BASH command search sequence
   1. First looks for alias
   2. Next looks for shell built-ins or shell functions.
   3. Then looks for scripts/binaries.
+  Article:
+    https://www.cyberciti.biz/tips/an-example-how-shell-understand-which-program-to-run-part-ii.html
