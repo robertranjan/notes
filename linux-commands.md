@@ -10,7 +10,7 @@
   Article:
     1. https://www.lifewire.com/linux-which-command-4062680
     
-###Usage: 
+### Usage: 
     1. `which less`  
     2. `which less pwd top ...`  
     3. `which -a less`  
@@ -21,3 +21,9 @@
   3. Then looks for scripts/binaries.
   Article:
     https://www.cyberciti.biz/tips/an-example-how-shell-understand-which-program-to-run-part-ii.html
+
+## FIND
+
+  Usage: find <where-to-look> <what-to-find> <what-to-do>
+  
+  Article: https://www.quora.com/How-does-the-find-command-work
