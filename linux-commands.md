@@ -24,6 +24,6 @@
 
 ## FIND
 
-  Usage: find <where-to-look> <what-to-find> <what-to-do>
-  
+  Usage: `find <where-to-look> <what-to-find> <what-to-do>`  
+
   Article: https://www.quora.com/How-does-the-find-command-work
