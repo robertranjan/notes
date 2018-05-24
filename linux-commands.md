@@ -15,7 +15,8 @@
     which less pwd top ...
     which -a less 
 
-## BASH command search sequence
+## BASH command search sequence  
+When you run a command in bash shell, bash look for Alias, built-in functions and binaries in the PATH. Here is the order:
   1. First looks for alias
   2. Next looks for shell built-ins or shell functions.
   3. Then looks for scripts/binaries.
