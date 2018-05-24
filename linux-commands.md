@@ -11,9 +11,9 @@
     1. https://www.lifewire.com/linux-which-command-4062680
     
 ### Usage: 
-    1. `which less`  
-    2. `which less pwd top ...`  
-    3. `which -a less`  
+    ```which less
+    which less pwd top ...
+    which -a less``` 
 
 ## BASH command search sequence
   1. First looks for alias
