@@ -30,6 +30,6 @@ When you run a command in bash shell, bash look for Alias, built-in functions an
   Article: https://www.quora.com/How-does-the-find-command-work
 
 Example:
-  List all files not owned by user `root`  
+  List all files not **owned by user root**  
   `find /root -not -user root -ls `  
-  Finds all files not owned by root and list them. Remove `-not` to get the list of files owned by `root`  
+  Finds all files not owned by root and list them. Remove `-not` to get the list of files **owned by root**  
