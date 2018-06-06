@@ -1,6 +1,6 @@
 
 Here is the default templatefor docker output. 
-File: ~/.docker/config [src: https://windsock.io/customising-docker-cli-output/ ]
+File: ~/.docker/config [src: https://windsock.io/customising-docker-cli-output/ ]  
 Sample:
 ```
 {
