@@ -33,3 +33,11 @@ Example:
   List all files not **owned by user root**  
   `find /root -not -user root -ls `  
   Finds all files not owned by root and list them. Remove `-not` to get the list of files **owned by root**  
+
+ Find based on ownership:  
+   find . -type f -user <owner> 
+  
+ Find based on permission:
+   find . -type -f -perm 700
+   
+ 
