@@ -1,5 +1,7 @@
 
-Here is the default templatefor docker output. 
+## Default docker command output template format  
+
+Here is the default templatefor docker output.  
 File: ~/.docker/config [src: https://windsock.io/customising-docker-cli-output/ ]  
 Sample:
 ```
