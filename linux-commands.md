@@ -31,13 +31,16 @@ When you run a command in bash shell, bash look for Alias, built-in functions an
 
 Example:
   List all files not **owned by user root**  
-  `find /root -not -user root -ls `  
+    find /root -not -user root -ls   
   Finds all files not owned by root and list them. Remove `-not` to get the list of files **owned by root**  
 
  Find based on ownership:  
-   find . -type f -user <owner> 
+    find . -type f -user <owner> 
   
  Find based on permission:
-   find . -type -f -perm 700
+    find . -type -f -perm 700
    
+ Find and list files with one per line like command `ls -l` style:
+    find . -type f -ls 
+ 
  
