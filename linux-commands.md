@@ -37,10 +37,10 @@ Example:
  Find based on ownership:  
     find . -type f -user <owner> 
   
- Find based on permission:
+ Find based on permission:  
     find . -type -f -perm 700
    
- Find and list files with one per line like command `ls -l` style:
+ Find and list files with one per line like command `ls -l` style:  
     find . -type f -ls 
  
  
