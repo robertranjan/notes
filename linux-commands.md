@@ -35,7 +35,7 @@ Example:
   Finds all files not owned by root and list them. Remove `-not` to get the list of files **owned by root**  
 
  Find based on ownership:  
-    find . -type f -user <owner> 
+    `find . -type f -user <owner/user>`  
   
  Find based on permission:  
     `find . -type -f -perm 700`
