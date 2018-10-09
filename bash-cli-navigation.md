@@ -91,7 +91,8 @@ Command Control Shortcuts
 
 
 ### fix previous command
-    fc
+    fc ; open previous command in your $EDITOR. Once edited, just save and exit to run
+    
 Sources:
  1. https://www.skorks.com/2009/09/bash-shortcuts-for-maximum-productivity/
  2. https://askubuntu.com/questions/45521/how-to-navigate-long-commands-faster
