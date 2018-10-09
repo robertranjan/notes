@@ -92,7 +92,11 @@ Command Control Shortcuts
 
 ### fix previous command
     fc ; open previous command in your $EDITOR. Once edited, just save and exit to run
-    
+
+The following command gives a nice columnar output showing the use and shortcuts
+
+    bind -P | grep "can be found" | sort | awk '{printf "%-40s", $1} {for(i=6;i<=NF;i++){printf "%s ", $i}{printf"\n"}}'
+
 Sources:
  1. https://www.skorks.com/2009/09/bash-shortcuts-for-maximum-productivity/
  2. https://askubuntu.com/questions/45521/how-to-navigate-long-commands-faster
