@@ -97,7 +97,7 @@ The following command gives a nice columnar output showing the use and shortcuts
 
     bind -P | grep "can be found" | sort | awk '{printf "%-40s", $1} {for(i=6;i<=NF;i++){printf "%s ", $i}{printf"\n"}}'
 
-Learn more at bash manual
+### Learn more at bash manual
     man bash 
         search for strin: Commands for Moving
         then read a lot there!!
