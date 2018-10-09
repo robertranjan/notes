@@ -89,6 +89,9 @@ Command Control Shortcuts
     !* – the previous command except for the last word (e.g. if you type ‘find some_file.txt /‘, then !* would give you ‘find some_file.txt‘)
     !*:p – print out what !* would substitute
 
+
+### fix previous command
+    fc
 Sources:
  1. https://www.skorks.com/2009/09/bash-shortcuts-for-maximum-productivity/
  2. https://askubuntu.com/questions/45521/how-to-navigate-long-commands-faster
