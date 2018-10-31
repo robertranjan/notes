@@ -47,3 +47,7 @@ Config file:
     [alt_names]
     DNS.1 = one.mycompany.com
     DNS.2 = two.mycompany.com
+
+Create key and cert:
+
+    openssl req -x509 -newkey rsa:4096 -keyout key.pem -out cert.pem -days 365
