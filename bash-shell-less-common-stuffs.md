@@ -16,16 +16,16 @@
 
 Replace a word of previous command and run:
 
-    > ls one two three
-    > ^one^four     ; this is equalent to replacing one from previous command to four and run it.
+    $ ls one two three
+    $ ^one^four     ; this is equalent to replacing one from previous command to four and run it.
                     ; **Press Alt+^ to expand the command before execution.**
                     ; This will find and replace first instance of *one* only.
 Replace all occurences of a last command with a new string:
 
-    > ls -ld Desktop work Downloads Desktop
-    > !!:gs/Desktop/git     ; this will replace all Desktop with git
+    $ ls -ld Desktop work Downloads Desktop
+    $ !!:gs/Desktop/git     ; this will replace all Desktop with git
                             ; Expand the command without executing it by pressing Alt+^
 
 Open previous 2 commands in EDITOR:
 
-    > fc -2 -1      ; this is open last 2 commands(previour 2 to previous 1) in your EDITOR, once you edit and write quit, that will be executed.
+    $ fc -2 -1      ; this is open last 2 commands(previour 2 to previous 1) in your EDITOR, once you edit and write quit, that will be executed.
